@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="show"
-    class="pin absolute flex items-center justify-center bg-transparent-black"
+    class="pin fixed flex items-center justify-center bg-transparent-black"
     @click.self="close"
   >
     <div class="relative bg-black shadow-lg max-w-2xl">
