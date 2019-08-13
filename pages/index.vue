@@ -8,15 +8,18 @@
         <div class="text-grey-darker text-base pb-1">{{ movie.release_date.substr(0, 4) }} | &starf; {{ movie.vote_average }}</div>
       </nuxt-link>
     </div>
+    <Infobox :class="{'hidden': !showInfobox}" @close="showInfobox = false" />
+    <div class="info" @click="showInfobox = true">i</div>
   </div>
 </template>
 
 <script>
 import axios from 'axios';
+import Infobox from '../components/Infobox';
 
 export default {
   components: {
-    
+    Infobox,
   },
   asyncData ({ params, error }) {
     return axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=fa60ca0bb69cf9b8b1e987abf0e50d97&language=pl-PL&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`)
@@ -29,7 +32,7 @@ export default {
   },
   data() {
     return {
-      
+      showInfobox: false,
     }
   }
 }
@@ -41,4 +44,20 @@ export default {
   @apply min-h-screen flex justify-center items-center text-center mx-auto;
 }
 */
+.info {
+  display: block;
+  position: fixed;
+  top: 20px;
+  right: 25px;
+  z-index: 1;
+  cursor: pointer;
+
+  border: 1px green solid;
+  border-radius: 50%;
+  color: green;
+  width: 25px;
+  height: 25px;
+  font-size: 20px;
+  text-align: center;
+}
 </style>
