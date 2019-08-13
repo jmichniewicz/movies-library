@@ -16,7 +16,7 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Montserrat:700|Open+Sans:400,600' }
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Montserrat:700|Open+Sans:400,600|Blinker:400,600,700&display=swap&subset=latin-ext' }
     ]
   },
 
