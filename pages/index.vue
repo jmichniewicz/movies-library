@@ -59,5 +59,10 @@ export default {
   height: 25px;
   font-size: 20px;
   text-align: center;
+
+  transition: transform 0.3s ease-in-out;
+}
+.info:hover {
+  transform: scale(1.1);
 }
 </style>
